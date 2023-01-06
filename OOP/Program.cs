@@ -2,6 +2,7 @@
 using OOP.Classes.typesofclasses.Concrete;
 using OOP.Classes.typesofclasses.Sealed;
 using OOP.Classes.typesofclasses.Static;
+using OOP.Encapsulation;
 
 // using concrete classes
 Person hashan = new("Hashan", "Eranga", 25);
@@ -25,9 +26,11 @@ Mobile Samsung = new("Samsung", "Samsung Description");
 Console.WriteLine(Nokia.ToString());
 Console.WriteLine(Samsung.ToString());
 
-
-
-
+// using encapsulation in c#
+Student stuHashan = new("Hashan", "Eranga", 25, 23, 3.1);
+Student stuIshini= new("Ishini", "Amasha", 21, 54, 3.6);
+Console.WriteLine(stuHashan.ToString());
+Console.WriteLine(stuIshini.ToString());
 
 
 Console.ReadLine();

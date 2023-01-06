@@ -13,6 +13,7 @@
     <None Remove="01-Classes\typesofclasses\Static\" />
     <None Remove="01-Classes\typesofclasses\Abstract\" />
     <None Remove="01-Classes\typesofclasses\Sealed\" />
+    <None Remove="02-Encapsulation\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="01-Classes\typesofclasses\" />
@@ -20,5 +21,6 @@
     <Folder Include="01-Classes\typesofclasses\Static\" />
     <Folder Include="01-Classes\typesofclasses\Abstract\" />
     <Folder Include="01-Classes\typesofclasses\Sealed\" />
+    <Folder Include="02-Encapsulation\" />
   </ItemGroup>
 </Project>
