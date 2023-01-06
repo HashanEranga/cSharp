@@ -10,9 +10,11 @@
   <ItemGroup>
     <None Remove="01-Classes\typesofclasses\" />
     <None Remove="01-Classes\typesofclasses\Concrete\" />
+    <None Remove="01-Classes\typesofclasses\Static\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="01-Classes\typesofclasses\" />
     <Folder Include="01-Classes\typesofclasses\Concrete\" />
+    <Folder Include="01-Classes\typesofclasses\Static\" />
   </ItemGroup>
 </Project>
