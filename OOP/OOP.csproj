@@ -11,10 +11,14 @@
     <None Remove="01-Classes\typesofclasses\" />
     <None Remove="01-Classes\typesofclasses\Concrete\" />
     <None Remove="01-Classes\typesofclasses\Static\" />
+    <None Remove="01-Classes\typesofclasses\Abstract\" />
+    <None Remove="01-Classes\typesofclasses\Sealed\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="01-Classes\typesofclasses\" />
     <Folder Include="01-Classes\typesofclasses\Concrete\" />
     <Folder Include="01-Classes\typesofclasses\Static\" />
+    <Folder Include="01-Classes\typesofclasses\Abstract\" />
+    <Folder Include="01-Classes\typesofclasses\Sealed\" />
   </ItemGroup>
 </Project>
