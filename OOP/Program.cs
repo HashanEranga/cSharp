@@ -4,6 +4,7 @@ using OOP.Classes.typesofclasses.Sealed;
 using OOP.Classes.typesofclasses.Static;
 using OOP.Encapsulation;
 using OOP.Polymorphism.ArchiverHandling;
+using OOP.Polymorphism.PaymentProcessor;
 using OOP.Polymorphism.UserHandling;
 
 // using concrete classes
@@ -77,5 +78,24 @@ rarArchiver.ArchiveFiles();
 Console.WriteLine("");
 Console.WriteLine("==================");
 Console.WriteLine("");
+
+// Interfacing 
+Client client = new Client();
+ChasePaymentProcessor chPay = new();
+
+client.SetPaymentProcessor(chPay);
+
+
+PaymentData pData = new();
+chPay.ValidatePayment();
+client.CheckOut(pData);
+
+Console.WriteLine("");
+Console.WriteLine("==================");
+Console.WriteLine("");
+
+PaypalPaymentProcessor palPay = new();
+client.SetPaymentProcessor(palPay);
+client.CheckOut(pData);
 
 Console.ReadLine();
