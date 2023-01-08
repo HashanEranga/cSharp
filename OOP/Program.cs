@@ -5,7 +5,12 @@ using OOP.Classes.typesofclasses.Static;
 using OOP.Encapsulation;
 using OOP.Polymorphism.ArchiverHandling;
 using OOP.Polymorphism.PaymentProcessor;
+using OOP.Polymorphism.ProductHandling;
 using OOP.Polymorphism.UserHandling;
+using OOP.SOLID.OpenClosePrinciple.Problem;
+using OOP.SOLID.OpenClosePrinciple.Solution;
+using OOP.SOLID.SingleResponsibilirtPrinciple.Problem;
+using OOP.SOLID.SingleResponsibilirtPrinciple.Solution;
 
 // using concrete classes
 Person hashan = new("Hashan", "Eranga", 25);
@@ -56,8 +61,8 @@ Console.WriteLine("==================");
 Console.WriteLine("");
 
 // polymorphism abstract classes
-User contentManager = new ContentManager();
-User admin = new AdminUser();
+OOP.Polymorphism.UserHandling.User contentManager = new ContentManager();
+OOP.Polymorphism.UserHandling.User admin = new AdminUser();
 
 contentManager.ValidateAccessRights();
 admin.ValidateAccessRights();
@@ -97,5 +102,67 @@ Console.WriteLine("");
 PaypalPaymentProcessor palPay = new();
 client.SetPaymentProcessor(palPay);
 client.CheckOut(pData);
+
+// inheritance example
+Console.WriteLine("");
+Console.WriteLine("==================");
+Console.WriteLine("");
+
+ProductItem item = new Phone("Samsung");
+item.Name = "Samsung M10";
+Console.WriteLine($"Product Name : {item.Name}");
+Console.WriteLine($"Remaining Amounts in stock : {item.CalculateRemainingAmount()}");
+
+Phone nokia = new("Nokia 1100");
+nokia.Ring();
+
+Phone samsung = (Phone)item;
+samsung.Ring();
+
+Console.WriteLine("");
+Console.WriteLine("==================");
+Console.WriteLine("");
+
+// SOLID Principles 
+// 01 Single Responsibility Principle
+// A class should have only one reason to change
+
+// Problem Setup
+PMailBoxSettingsService settingsService = new();
+PMailUser user = new("abc@def.com", "pqr@efg.com", PRole.ADMIN);
+
+// Responsibility 01
+settingsService.ChangePrimaryEmail(user, "qwe@ert.com");
+
+// Responsibility 02 
+if (settingsService.HasAccess(user)) user.SendMoney(new PMailUser("uio@abc.com", "rty@mnb.com", PRole.ADMIN), 1000);
+
+// Solution Setup
+MailBoxSettingsService serviceSettings = new();
+MailUser newUser = new("abc@def.com", "pqr@efg.com", Role.ADMIN);
+
+serviceSettings.ChangePrimaryEmail(newUser, "ccmrhe@gmail.com");
+SecurityService serviceSecurity = new();
+if (serviceSecurity.HasAccess(newUser))
+{
+    newUser.SendMoney(new MailUser("e16275@eng.pdn.ac.lk", "hashaneranga@ieee.org", Role.MANAGER), 1000);
+}
+
+// 02 Open/ Close Principle
+// Software entities open for extension and close for modification
+// Problem Set 
+PLoanHandler loanHandler = new();
+PUser person = new();
+loanHandler.ApprovePersonalLoan(person);
+loanHandler.ApproveMortage(person);
+
+// Solution
+PersonalLoanHandler HandlesLoan = new PersonalLoanHandler(new PersonalLoanValidator());
+OOP.SOLID.OpenClosePrinciple.Solution.User userNew = new();
+HandlesLoan.ApproveLoan(userNew);
+
+MortageHandler HandlesLoanNew = new MortageHandler(new MortageLoanValidator());
+HandlesLoanNew.ApproveLoan(userNew);
+
 
 Console.ReadLine();
