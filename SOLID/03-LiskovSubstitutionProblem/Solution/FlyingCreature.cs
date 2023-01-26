@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP.SOLID.LiskovSubstitutionProblem.Solution
+namespace SOLID.LiskovSubstitutionProblem.Solution
 {
     public interface FlyingCreature : Creature
     {
