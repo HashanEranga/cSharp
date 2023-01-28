@@ -1,6 +1,6 @@
 ﻿using DesignPatterns.Creational.Singleton;
 
-OrderManagement order1 = OrderManagement.getInstance();
-OrderManagement order2 = OrderManagement.getInstance();
+OrderManagement order1 = OrderManagement.Instance;
+OrderManagement order2 = OrderManagement.Instance;
 
 Console.WriteLine(order1 == order2);
